@@ -13,3 +13,5 @@ describe 'PerlSpec' => sub {
     ok($testing_perl eq 'easy', '');
   };
 ];
+
+1;
