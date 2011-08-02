@@ -10,3 +10,5 @@ Just add PerlSpec to your project and `use`.
       };
     };
 
+
+For a more detailed example, see `BowlingSpec.pl`
