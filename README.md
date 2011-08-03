@@ -1,5 +1,11 @@
 ## PerlSpec ##
 
+install `Test::More`
+
+```
+$ cpan Test::More
+```
+
 Just add PerlSpec to your project and `use`.
 
     use PerlSpec 'no_plan';
