@@ -17,7 +17,7 @@ describe 'Bowling' => sub {
 
   it 'returns a score of 20 for all single pin bowls' => sub {
     my $game = Bowling->new;
-    for(1, 20) {
+    for(1..20) {
       $game->roll(1);
     }
     is($game->score, 20);

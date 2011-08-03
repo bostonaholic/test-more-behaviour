@@ -1,5 +1,9 @@
+package Bowling;
+
 use strict;
 use warnings;
+
+our @EXPORT = qw(new roll score);
 
 sub new {
   return bless {rolls => []}, shift;
