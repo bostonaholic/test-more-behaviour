@@ -17,4 +17,4 @@ Just download PerlSpec.pm, add to your project and `use`.
     };
 
 
-For a more detailed example, see `BowlingSpec.t`
+For a more detailed example, see `examples/BowlingSpec.t`
