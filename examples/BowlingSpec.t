@@ -12,17 +12,6 @@ sub set_up {
   #$game = Bowling->new;
 }
 
-sub _roll {
-  _roll_many(1, shift);
-}
-
-sub _roll_many {
-  my ($rolls, $pins) = @_;
-  for(1..$rolls) {
-    $game->roll($pins);
-  }
-}
-
 describe 'Bowling' => sub {
   it 'returns a score of 0 for all gutter balls' => sub {
     $game = Bowling->new;
@@ -65,3 +54,15 @@ describe 'Bowling' => sub {
     is($game->score, 300);
   };
 };
+
+sub _roll {
+  _roll_many(1, shift);
+}
+
+sub _roll_many {
+  my ($rolls, $pins) = @_;
+  for(1..$rolls) {
+    $game->roll($pins);
+  }
+}
+
