@@ -72,20 +72,12 @@ sub _bonus_ball_two {
 
 sub _strike {
   my $pos = shift;
-  if(10 == _ball_one($pos)) {
-    return 1;
-  } else {
-    return 0;
-  }
+  return (10 == _ball_one($pos));
 };
 
 sub _spare {
   my $pos = shift;
-  if (10 == _ball_one($pos) + _ball_two($pos) and 10 > _ball_one($pos)) {
-    return 1;
-  } else {
-    return 0;
-  }
+  return (10 == _ball_one($pos) + _ball_two($pos) and 10 > _ball_one($pos));
 };
 
 1;
