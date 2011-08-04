@@ -27,3 +27,4 @@ $ cd examples
 $ perl -I ../ BowlingSpec.t
 ```
 
+Special thanks to Dustin Williams for writing the initial version as `Behaviour`.
