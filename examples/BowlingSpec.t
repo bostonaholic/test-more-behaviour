@@ -4,31 +4,31 @@ use strict;
 use warnings;
 
 use PerlSpec 'no_plan';
-use Bowling;
 
 my $game;
 
 sub set_up {
-  #$game = Bowling->new;
+  $game = Bowling->new;
+}
+
+BEGIN {
+  use_ok('Bowling');
 }
 
 describe 'Bowling' => sub {
   it 'returns a score of 0 for all gutter balls' => sub {
-    $game = Bowling->new;
     _roll_many(20, 0);
 
     is($game->score, 0);
   };
 
   it 'returns a score of 20 for all single pin bowls' => sub {
-    $game = Bowling->new;
     _roll_many(20, 1);
 
     is($game->score, 20);
   };
 
   it 'scores a spare plus next roll' => sub {
-    $game = Bowling->new;
     _roll(4);
     _roll(6);
     _roll(3);
@@ -38,7 +38,6 @@ describe 'Bowling' => sub {
   };
 
   it 'scores a strike plus next two rolls' => sub {
-    $game = Bowling->new;
     _roll(10);
     _roll(1);
     _roll(6);
@@ -48,7 +47,6 @@ describe 'Bowling' => sub {
   };
 
   it 'scores a perfect 300' => sub {
-    $game = Bowling->new;
     _roll_many(12, 10);
 
     is($game->score, 300);
@@ -66,3 +64,4 @@ sub _roll_many {
   }
 }
 
+1;

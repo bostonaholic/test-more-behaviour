@@ -13,7 +13,7 @@ my $spec_desc;
 sub it {
   my $description = shift;
   my $block       = shift;
-  main::set_up() if main->can('set_up');
+  caller->set_up if caller->can('set_up');
 
   subtest _construct_description($description) => sub {
     plan 'no_plan';
@@ -25,7 +25,7 @@ sub it {
     };
   };
 
-  main::tear_down() if main->can('tear_down');
+  caller->tear_down if caller->can('tear_down');
   return;
 }
 
