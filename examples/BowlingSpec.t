@@ -1,5 +1,3 @@
-package BowlingSpec;
-
 use strict;
 use warnings;
 
