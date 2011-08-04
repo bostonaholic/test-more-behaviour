@@ -35,6 +35,15 @@ sub score {
   return $score;
 };
 
+sub _strike {
+  return (10 == _ball_one(shift));
+};
+
+sub _spare {
+  my $pos = shift;
+  return (10 == _ball_one($pos) + _ball_two($pos) and 10 > _ball_one($pos));
+};
+
 sub _score_open_frame {
   my $pos = shift;
   return _ball_one($pos) + _ball_two($pos);
@@ -64,15 +73,6 @@ sub _bonus_ball_one {
 
 sub _bonus_ball_two {
   return $rolls[(shift)+1];
-};
-
-sub _strike {
-  return (10 == _ball_one(shift));
-};
-
-sub _spare {
-  my $pos = shift;
-  return (10 == _ball_one($pos) + _ball_two($pos) and 10 > _ball_one($pos));
 };
 
 1;
