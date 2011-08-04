@@ -51,28 +51,23 @@ sub _score_strike {
 };
 
 sub _ball_one {
-  my $pos = shift;
-  return $rolls[$pos];
+  return $rolls[shift];
 };
 
 sub _ball_two {
-  my $pos = shift;
-  return $rolls[$pos+1];
+  return $rolls[(shift)+1];
 };
 
 sub _bonus_ball_one {
-  my $pos = shift;
-  return $rolls[$pos+2];
+  return $rolls[(shift)+2];
 };
 
 sub _bonus_ball_two {
-  my $pos = shift;
-  return $rolls[$pos+1];
+  return $rolls[(shift)+1];
 };
 
 sub _strike {
-  my $pos = shift;
-  return (10 == _ball_one($pos));
+  return (10 == _ball_one(shift));
 };
 
 sub _spare {
