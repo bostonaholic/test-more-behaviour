@@ -3,7 +3,7 @@ package PerlSpec;
 use warnings;
 use strict;
 
-use base 'Test::More';
+use base qw(Test::More);
 use Test::More;
 
 our @EXPORT = ( @Test::More::EXPORT, qw(it describe) );
