@@ -21,6 +21,14 @@ sub it {
   return;
 }
 
+sub describe {
+  $spec_desc = shift;
+  my $block = shift;
+  $block->();
+  $spec_desc = undef;
+  return;
+}
+
 sub _evaluate_and_print {
   my $description = shift;
   my $block       = shift;
@@ -34,14 +42,6 @@ sub _evaluate_and_print {
       fail($@);
     };
   };
-}
-
-sub describe {
-  $spec_desc = shift;
-  my $block = shift;
-  $block->();
-  $spec_desc = undef;
-  return;
 }
 
 sub _construct_description {
