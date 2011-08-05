@@ -23,7 +23,7 @@ sub it {
 
 sub describe {
   $spec_desc = shift;
-  my $block = shift;
+  my $block  = shift;
   $block->();
   $spec_desc = undef;
   return;
