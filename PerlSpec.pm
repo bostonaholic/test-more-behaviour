@@ -13,7 +13,17 @@ my $spec_desc;
 sub it {
   my $description = shift;
   my $block       = shift;
+
   caller->set_up if caller->can('set_up');
+  _evaluate_and_print($description, $block);
+  caller->tear_down if caller->can('tear_down');
+
+  return;
+}
+
+sub _evaluate_and_print {
+  my $description = shift;
+  my $block       = shift;
 
   subtest _construct_description($description) => sub {
     plan 'no_plan';
@@ -24,9 +34,6 @@ sub it {
       fail($@);
     };
   };
-
-  caller->tear_down if caller->can('tear_down');
-  return;
 }
 
 sub describe {
