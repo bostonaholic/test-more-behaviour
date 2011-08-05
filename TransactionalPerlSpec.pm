@@ -1,12 +1,11 @@
-package PerlSpec;
+package TransactionalPerlSpec;
 
 use warnings;
 use strict;
 
 use base qw(Test::More);
 use Test::More;
-
-use version; our $VERSION = '0.1.0';
+use Database;
 
 our @EXPORT = ( @Test::More::EXPORT, qw(it describe) );
 
@@ -16,9 +15,14 @@ sub it {
   my $description = shift;
   my $block       = shift;
 
+  my $dbh = Database->db_connect;
+  caller->set_dbh($dbh) if caller->can('set_dbh');
+
   caller->set_up if caller->can('set_up');
   _evaluate_and_print($description, $block);
   caller->tear_down if caller->can('tear_down');
+
+  $dbh->rollback;
 
   return;
 }
