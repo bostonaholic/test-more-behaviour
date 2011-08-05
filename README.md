@@ -1,9 +1,11 @@
 ## PerlSpec ##
 
-install `Test::More`
+install `YAML`, `Test::More`, and `version`
 
 ```
-$ cpan Test::More
+$ cpan -i YAML
+$ cpan -i Test::More
+$ cpan -i version
 ```
 
 Just download `PerlSpec.pm`, add to your project and `use`.
