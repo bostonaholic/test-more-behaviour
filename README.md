@@ -1,5 +1,7 @@
 ## PerlSpec ##
 
+### DEVELOPMENT ###
+
 install `YAML`, `Test::More`, and `version`
 
 ```
@@ -8,7 +10,13 @@ $ cpan -i Test::More
 $ cpan -i version
 ```
 
-Just download `PerlSpec.pm`, add to your project and `use`.
+### PRODUCTION ###
+
+install `PerlSpec` through CPAN, add to your project and `use`.
+
+```
+$ cpan -i PerlSpec
+```
 
 ```
 use PerlSpec 'no_plan';
