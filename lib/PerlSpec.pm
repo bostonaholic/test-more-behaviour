@@ -6,7 +6,7 @@ use strict;
 use base qw(Test::More);
 use Test::More;
 
-use version; our $VERSION = version->declare("v0.1.0");
+use version; our $VERSION = qv('0.1.0');
 
 our @EXPORT = ( @Test::More::EXPORT, qw(it describe) );
 
