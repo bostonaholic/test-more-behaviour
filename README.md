@@ -20,13 +20,6 @@ describe 'PerlSpec' => sub {
 };
 ```
 
-For a more detailed example, see `examples/BowlingSpec.t`
-
-To run `BowlingSpec.t`
-
-```
-$ cd examples
-$ perl -I ../ BowlingSpec.t
-```
+For a more detailed example, see [bowling-perl](https://github.com/bostonaholic/bowling-perl)
 
 Special thanks to Dustin Williams for writing the initial version as `Behaviour`.
