@@ -17,13 +17,13 @@ my $context_desc;
 sub describe {
   $spec_desc = shift;
   my $block  = shift;
-  _evaluate_and_print($spec_desc, $block);
+  return _evaluate_and_print($spec_desc, $block);
 }
 
 sub context {
   $context_desc = shift;
   my $block     = shift;
-  _evaluate_and_print($context_desc, $block);
+  return _evaluate_and_print($context_desc, $block);
 }
 
 sub it {
@@ -63,8 +63,8 @@ sub _evaluate_and_print_subtest {
 sub _construct_description {
   my ($test_desc) = @_;
   my $result = $test_desc;
-  $result = "$spec_desc\n\t $result" unless ! $spec_desc or $context_desc;
-  $result = "$spec_desc\n\t $context_desc\n\t   $result" unless ! $context_desc;
+  $result = "$spec_desc\n\t $result" if $spec_desc and (! $context_desc);
+  $result = "$spec_desc\n\t $context_desc\n\t   $result" if $spec_desc and $context_desc;
   return $result;
 }
 
