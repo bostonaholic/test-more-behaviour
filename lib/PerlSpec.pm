@@ -1,12 +1,13 @@
 package PerlSpec;
 
-use warnings;
+use 5.010000;
 use strict;
+use warnings;
 
 use base qw(Test::More);
 use Test::More;
 
-use version; our $VERSION = qv('0.1.0');
+use version; our $VERSION = qv('0.1.1');
 
 our @EXPORT = ( @Test::More::EXPORT, qw(it describe) );
 
