@@ -7,7 +7,7 @@ use warnings;
 use base 'Test::More';
 use Test::More;
 
-use version; our $VERSION = qv('0.3.1');
+use version; our $VERSION = qv('0.3.2');
 
 our @EXPORT = ( @Test::More::EXPORT, qw(describe context it) );
 
@@ -17,13 +17,19 @@ my $context_desc;
 sub describe {
   $spec_desc = shift;
   my $block  = shift;
-  return _evaluate_and_print($spec_desc, $block);
+  _evaluate_and_print($spec_desc, $block);
+  $spec_desc = undef;
+
+  return;
 }
 
 sub context {
   $context_desc = shift;
   my $block     = shift;
-  return _evaluate_and_print($context_desc, $block);
+  _evaluate_and_print($context_desc, $block);
+  $context_desc = undef;
+
+  return;
 }
 
 sub it {
