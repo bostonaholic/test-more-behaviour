@@ -7,17 +7,26 @@ use warnings;
 use base 'Test::More';
 use Test::More;
 
-use version; our $VERSION = qv('0.2.0');
+use version; our $VERSION = qv('0.3.0');
 
-our @EXPORT = ( @Test::More::EXPORT, qw(describe it) );
+our @EXPORT = ( @Test::More::EXPORT, qw(describe context it) );
 
 my $spec_desc;
+my $context_desc;
 
 sub describe {
   $spec_desc = shift;
   my $block  = shift;
   $block->();
   $spec_desc = undef;
+  return;
+}
+
+sub context {
+  $context_desc = shift;
+  my $block     = shift;
+  $block->();
+  $context_desc = undef;
   return;
 }
 
@@ -50,7 +59,10 @@ sub _evaluate_and_print {
 sub _construct_description {
   my ($test_desc) = @_;
   my $result = $test_desc;
-  $result = "$spec_desc $result" unless ! $spec_desc;
+  if( ! $context_desc) {
+    $result = "$spec_desc\n\t $result" unless ! $spec_desc;
+  }
+  $result = "$spec_desc\n\t $context_desc\n\t   $result" unless ! $context_desc;
   return $result;
 }
 
