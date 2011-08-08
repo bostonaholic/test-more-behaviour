@@ -1,4 +1,4 @@
-lib/PerlSpec.pm
+lib/Test/More/Behaviour.pm
 Makefile.PL
 MANIFEST
 MANIFEST.SKIP

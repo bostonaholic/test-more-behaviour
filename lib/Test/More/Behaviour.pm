@@ -1,4 +1,4 @@
-package PerlSpec;
+package Test::More::Behaviour;
 
 use 5.010000;
 use strict;
@@ -7,7 +7,7 @@ use warnings;
 use base 'Test::More';
 use Test::More;
 
-use version; our $VERSION = qv('0.1.1');
+use version; our $VERSION = qv('0.2.0');
 
 our @EXPORT = ( @Test::More::EXPORT, qw(describe it) );
 

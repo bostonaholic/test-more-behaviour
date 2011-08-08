@@ -1,4 +1,4 @@
-## PerlSpec ##
+## Test::More::Behaviour ##
 
 ### DEVELOPMENT ###
 
@@ -12,16 +12,16 @@ $ cpan -i version
 
 ### PRODUCTION ###
 
-install `PerlSpec` through CPAN, add to your project and `use`.
+install `Test::More::Behaviour` through CPAN, add to your project and `use`.
 
 ```
-$ cpan -i PerlSpec
+$ cpan -i Test::More::Behaviour
 ```
 
 ```
-use PerlSpec 'no_plan';
+use Test::More::Behaviour 'no_plan';
 
-describe 'PerlSpec' => sub {
+describe 'Behaviour' => sub {
   it 'makes testing Perl awesome!' => sub {
     ok($testing_perl eq 'awesome', '');
   };
@@ -30,4 +30,4 @@ describe 'PerlSpec' => sub {
 
 For a more detailed example, see [bowling-perl](https://github.com/bostonaholic/bowling-perl)
 
-Special thanks to Dustin Williams for writing the initial version as `Behaviour`.
+Special thanks to Dustin Williams for writing the initial version.

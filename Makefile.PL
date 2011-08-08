@@ -1,8 +1,8 @@
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-  NAME              => 'PerlSpec',
-  VERSION_FROM      => 'lib/PerlSpec.pm',
+  NAME              => 'Behaviour',
+  VERSION_FROM      => 'lib/Test/More/Behaviour.pm',
   PREREQ_PM         => {
     version  => 0.77
   },
