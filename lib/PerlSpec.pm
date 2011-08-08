@@ -4,14 +4,22 @@ use 5.010000;
 use strict;
 use warnings;
 
-use base qw(Test::More);
+use base 'Test::More';
 use Test::More;
 
 use version; our $VERSION = qv('0.1.1');
 
-our @EXPORT = ( @Test::More::EXPORT, qw(it describe) );
+our @EXPORT = ( @Test::More::EXPORT, qw(describe it) );
 
 my $spec_desc;
+
+sub describe {
+  $spec_desc = shift;
+  my $block  = shift;
+  $block->();
+  $spec_desc = undef;
+  return;
+}
 
 sub it {
   my $description = shift;
@@ -21,14 +29,6 @@ sub it {
   _evaluate_and_print($description, $block);
   caller->tear_down if caller->can('tear_down');
 
-  return;
-}
-
-sub describe {
-  $spec_desc = shift;
-  my $block  = shift;
-  $block->();
-  $spec_desc = undef;
   return;
 }
 
