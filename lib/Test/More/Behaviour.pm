@@ -59,9 +59,7 @@ sub _evaluate_and_print {
 sub _construct_description {
   my ($test_desc) = @_;
   my $result = $test_desc;
-  if( ! $context_desc) {
-    $result = "$spec_desc\n\t $result" unless ! $spec_desc;
-  }
+  $result = "$spec_desc\n\t $result" unless ! $spec_desc or $context_desc;
   $result = "$spec_desc\n\t $context_desc\n\t   $result" unless ! $context_desc;
   return $result;
 }
