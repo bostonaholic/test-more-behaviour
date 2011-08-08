@@ -49,7 +49,7 @@ sub _evaluate_and_print_subtest {
   my $description = shift;
   my $block       = shift;
 
-  subtest _construct_description($description) => sub {
+  return subtest _construct_description($description) => sub {
     plan 'no_plan';
     eval {
       $block->();
