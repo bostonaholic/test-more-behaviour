@@ -1,0 +1,39 @@
+## Test::More::Behaviour ##
+
+### DEVELOPMENT ###
+
+install `YAML`, `Test::More`, and `version`
+
+```
+$ cpan -i YAML
+$ cpan -i Test::More
+$ cpan -i version
+```
+
+### PRODUCTION ###
+
+install `Test::More::Behaviour` through CPAN, add to your project and `use`.
+
+```
+$ cpan -i Test::More::Behaviour
+```
+
+```
+use Test::More::Behaviour 'no_plan';
+
+describe 'Test::More::Behaviour' => sub {
+  it 'makes testing Perl awesome!' => sub {
+    ok($testing_perl eq 'awesome', '');
+  };
+
+  context 'testing Perl' => sub {
+    it 'rocks!' => sub {
+      ok($testing_perl eq 'rocks', '');
+    };
+  };
+};
+```
+
+For a more detailed example, see [bowling-perl](https://github.com/bostonaholic/bowling-perl)
+
+Special thanks to Dustin Williams for writing the initial version.
