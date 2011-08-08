@@ -4,5 +4,5 @@ blib
 .bak$
 Makefile$
 Makefile.old
-PerlSpec*.tar.gz
-t/PerlSpec.t
+Behaviour*.tar.gz
+t/Behaviour.t
