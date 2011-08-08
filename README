@@ -21,9 +21,15 @@ $ cpan -i Test::More::Behaviour
 ```
 use Test::More::Behaviour 'no_plan';
 
-describe 'Behaviour' => sub {
+describe 'Test::More::Behaviour' => sub {
   it 'makes testing Perl awesome!' => sub {
     ok($testing_perl eq 'awesome', '');
+  };
+
+  context 'testing Perl' => sub {
+    it 'rocks!' => sub {
+      ok($testing_perl eq 'rocks', '');
+    };
   };
 };
 ```
