@@ -1,10 +1,13 @@
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-  NAME              => 'Behaviour',
+  NAME              => 'Test::More::Behaviour',
+  AUTHOR            => 'Matthew Boston <matthew.boston@gmail.com>',
   VERSION_FROM      => 'lib/Test/More/Behaviour.pm',
   PREREQ_PM         => {
-    version  => 0.77
+    'Test::More'    => 0,
+    'version'       => 0.77
   },
-  AUTHOR            => 'Matthew Boston <matthew.boston@gmail.com>'
+  dist              => { COMPRESS => 'gzip -9f', SUFFIX => 'gz' },
+  clean             => { FILES => 'Test-More-Behaviour-*' }
 );

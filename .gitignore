@@ -3,4 +3,4 @@ Makefile
 Makefile.old
 blib
 pm_to_blib
-Behaviour*tar.gz
+Test-More-Behaviour*tar.gz
