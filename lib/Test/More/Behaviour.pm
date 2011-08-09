@@ -67,8 +67,8 @@ sub _evaluate_and_print_subtest {
 }
 
 sub _construct_description {
-  my ($test_desc) = @_;
-  my $result = $test_desc;
+  my $result = shift;
+
   $result = "$spec_desc\n\t $result" if $spec_desc and (! $context_desc);
   $result = "$spec_desc\n\t $context_desc\n\t   $result" if $spec_desc and $context_desc;
   return $result;
