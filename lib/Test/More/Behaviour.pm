@@ -35,8 +35,7 @@ sub context {
 }
 
 sub it {
-  my $description = shift;
-  my $block       = shift;
+  my ($description, $block) = @_;
 
   caller->set_up if caller->can('set_up');
   _evaluate_and_print_subtest($description, $block);
@@ -46,8 +45,7 @@ sub it {
 }
 
 sub _evaluate_and_print_subtest {
-  my $description = shift;
-  my $block       = shift;
+  my ($description, $block) = @_;
 
   print _subtest(_construct_description($description) => _subtest_block($block));
 
@@ -55,8 +53,7 @@ sub _evaluate_and_print_subtest {
 }
 
 sub _subtest {
-    my $description = shift;
-    my $block       = shift;
+    my ($description, $block) = @_;
 
     $block->();
     return $description->(),"\n";
@@ -64,6 +61,7 @@ sub _subtest {
 
 sub _subtest_block {
   my $block = shift;
+
   return sub {
     eval {
       $passed = $block->();
