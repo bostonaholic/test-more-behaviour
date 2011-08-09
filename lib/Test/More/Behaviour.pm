@@ -8,28 +8,28 @@ use base 'Test::More';
 use Test::More;
 use Term::ANSIColor;
 
-use version; our $VERSION = qv('0.4.0');
+use version; our $VERSION = qv('0.4.1');
 
 our @EXPORT = ( @Test::More::EXPORT, qw(describe context it) );
 
-my $spec_desc;
-my $context_desc;
+my $spec_description;
+my $context_description;
 my $passed = 1;
 
 sub describe {
-  $spec_desc = shift;
-  my $block  = shift;
+  $spec_description = shift;
+  my $block         = shift;
   $block->();
-  $spec_desc = undef;
+  $spec_description = undef;
 
   return;
 }
 
 sub context {
-  $context_desc = shift;
-  my $block     = shift;
+  $context_description = shift;
+  my $block            = shift;
   $block->();
-  $context_desc = undef;
+  $context_description = undef;
 
   return;
 }
@@ -46,20 +46,20 @@ sub it {
 }
 
 sub _evaluate_and_print_subtest {
-  my $desc  = shift;
-  my $block = shift;
+  my $description = shift;
+  my $block       = shift;
 
-  return _subtest(_construct_description($desc) => _subtest_block($block));
+  print _subtest(_construct_description($description) => _subtest_block($block));
+
+  return;
 }
 
 sub _subtest {
-    my $desc  = shift;
-    my $block = shift;
+    my $description = shift;
+    my $block       = shift;
 
     $block->();
-    print $desc->(),"\n";
-
-    return;
+    return $description->(),"\n";
 }
 
 sub _subtest_block {
@@ -78,8 +78,8 @@ sub _subtest_block {
 sub _construct_description {
   my $result = shift;
 
-  $result = "$spec_desc\n  $result" if $spec_desc and (! $context_desc);
-  $result = "$spec_desc\n  $context_desc\n    $result" if $spec_desc and $context_desc;
+  $result = "$spec_description\n  $result" if $spec_description and (! $context_description);
+  $result = "$spec_description\n  $context_description\n    $result" if $spec_description and $context_description;
 
   return sub { colored [$passed ? 'green' : 'red'], $result };
 }
