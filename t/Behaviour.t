@@ -8,21 +8,34 @@ BEGIN {
 };
 
 describe 'Account' => sub {
-  it 'transfers money' => sub {
+  it 'deposits money' => sub {
     is(1, 1);
   };
-  it 'deposits money' => sub {
+  it 'withdrawals money' => sub {
+    is(1, 1);
+  };
+  it 'transfers money' => sub {
     is(1, 1);
   };
 };
 
-describe 'Account' => sub {
+describe 'Account with context' => sub {
   context 'transferring money' => sub {
     it 'withdrawals amount from the original account' => sub {
       is(1, 1);
     };
-    it 'deposits amount to the other account' => sub {
+    it 'deposits amount to the target account' => sub {
       is(1, 1);
     };
+  };
+
+  it 'does something outside of the previous context' => sub {
+    is(1, 1);
+  };
+};
+
+describe 'Account outside of context' => sub {
+  it 'does other stuff' => sub {
+    is(1, 1);
   };
 };

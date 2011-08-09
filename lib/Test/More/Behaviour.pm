@@ -6,18 +6,20 @@ use warnings;
 
 use base 'Test::More';
 use Test::More;
+use Term::ANSIColor;
 
-use version; our $VERSION = qv('0.3.2');
+use version; our $VERSION = qv('0.4.0');
 
 our @EXPORT = ( @Test::More::EXPORT, qw(describe context it) );
 
 my $spec_desc;
 my $context_desc;
+my $passed = 1;
 
 sub describe {
   $spec_desc = shift;
   my $block  = shift;
-  _evaluate_and_print($spec_desc, $block);
+  $block->();
   $spec_desc = undef;
 
   return;
@@ -26,7 +28,7 @@ sub describe {
 sub context {
   $context_desc = shift;
   my $block     = shift;
-  _evaluate_and_print($context_desc, $block);
+  $block->();
   $context_desc = undef;
 
   return;
@@ -43,24 +45,31 @@ sub it {
   return;
 }
 
-sub _evaluate_and_print {
+sub _evaluate_and_print_subtest {
   my $desc  = shift;
   my $block = shift;
-  $block->();
-  $desc     = undef;
-  return;
+
+  return _subtest(_construct_description($desc) => _subtest_block($block));
 }
 
-sub _evaluate_and_print_subtest {
-  my $description = shift;
-  my $block       = shift;
+sub _subtest {
+    my $desc  = shift;
+    my $block = shift;
 
-  return subtest _construct_description($description) => sub {
-    plan 'no_plan';
+    $block->();
+    print $desc->(),"\n";
+
+    return;
+}
+
+sub _subtest_block {
+  my $block = shift;
+  return sub {
     eval {
-      $block->();
+      $passed = $block->();
       1;
     } or do {
+      $passed = 0;
       fail($@);
     };
   };
@@ -69,9 +78,10 @@ sub _evaluate_and_print_subtest {
 sub _construct_description {
   my $result = shift;
 
-  $result = "$spec_desc\n\t $result" if $spec_desc and (! $context_desc);
-  $result = "$spec_desc\n\t $context_desc\n\t   $result" if $spec_desc and $context_desc;
-  return $result;
+  $result = "$spec_desc\n  $result" if $spec_desc and (! $context_desc);
+  $result = "$spec_desc\n  $context_desc\n    $result" if $spec_desc and $context_desc;
+
+  return sub { colored [$passed ? 'green' : 'red'], $result };
 }
 
 1;

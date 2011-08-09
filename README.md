@@ -4,12 +4,14 @@
 
 ### DEVELOPMENT ###
 
-install `YAML`, `Test::More`, and `version`
+install modules
 
 ```
 $ cpan -i YAML
 $ cpan -i Test::More
 $ cpan -i version
+$ coan -i Term::ANSIColor
+$ cpan -i Perl::Critic
 ```
 
 ### PRODUCTION ###
