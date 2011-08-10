@@ -20,7 +20,7 @@ describe 'Account' => sub {
 };
 
 describe 'Account with context' => sub {
-  context 'transferring money' => sub {
+  context 'when transferring money' => sub {
     it 'withdrawals amount from the original account' => sub {
       is(1, 1);
     };
