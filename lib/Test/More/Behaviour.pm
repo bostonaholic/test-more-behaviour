@@ -19,7 +19,11 @@ my $passed = 1;
 sub describe {
   $spec_description = shift;
   my $block         = shift;
+
+  caller->before_all if caller->can('before_all');
   $block->();
+  caller->after_all if caller->can('after_all');
+
   $spec_description = undef;
 
   return;
@@ -37,9 +41,9 @@ sub context {
 sub it {
   my ($description, $block) = @_;
 
-  caller->set_up if caller->can('set_up');
+  caller->before_each if caller->can('before_each');
   _evaluate_and_print_subtest($description, $block);
-  caller->tear_down if caller->can('tear_down');
+  caller->after_each if caller->can('after_each');
 
   return;
 }
