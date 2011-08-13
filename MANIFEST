@@ -1,5 +1,8 @@
-lib/Test/More/Behaviour.pm
+Changes
 Makefile.PL
 MANIFEST
 MANIFEST.SKIP
 README
+t/Behaviour.t
+lib/Test/More/Behaviour.pm
+t/Behaviour.t

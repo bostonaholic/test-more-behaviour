@@ -4,6 +4,5 @@ blib
 .bak$
 Makefile$
 Makefile.old
-Behaviour*.tar.gz
-t/Behaviour.t
+*.tar.gz
 README.md
