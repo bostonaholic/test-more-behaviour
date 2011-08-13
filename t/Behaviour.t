@@ -13,10 +13,9 @@ describe 'Account' => sub {
   };
   it 'withdrawals money' => sub {
     is(1, 1);
-    is(1, 1);
   };
   it 'transfers money' => sub {
-    is(1, 2);
+    is(1, 1);
   };
 };
 
