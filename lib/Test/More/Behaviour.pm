@@ -6,7 +6,7 @@ use warnings;
 
 use base 'Test::More';
 use Test::More;
-use Term::ANSIColor;
+use Term::ANSIColor qw(colored);
 
 use version; our $VERSION = qv('0.4.2');
 
