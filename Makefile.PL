@@ -5,9 +5,10 @@ WriteMakefile(
   AUTHOR            => 'Matthew Boston <matthew.boston@gmail.com>',
   VERSION_FROM      => 'lib/Test/More/Behaviour.pm',
   PREREQ_PM         => {
-    'Test::More'      => 0,
-    'Term::ANSIColor' => 0,
-    'version'         => 0.77
+    'IO::Capture::Stdout' => 0,
+    'Term::ANSIColor'     => 0,
+    'Test::More'          => 0,
+    'version'             => 0.77
   },
   dist              => { COMPRESS => 'gzip -9f', SUFFIX => 'gz' },
   clean             => { FILES => 'Test-More-Behaviour-*' }

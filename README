@@ -9,8 +9,9 @@ install modules
 ```
 $ cpan -i YAML
 $ cpan -i Test::More
-$ cpan -i version
 $ coan -i Term::ANSIColor
+$ cpan -i IO::Capture::Stdout
+$ cpan -i version
 $ cpan -i Perl::Critic
 ```
 

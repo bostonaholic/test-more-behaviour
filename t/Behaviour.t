@@ -2,6 +2,7 @@ use strict;
 use warnings;
 
 use Test::More 'no_plan';
+use IO::Capture::Stdout;
 
 BEGIN {
   use_ok('Test::More::Behaviour')
@@ -156,4 +157,19 @@ subtest 'after_each executes for each it' => sub {
   };
 
   is($after_each_var, 3);
+};
+
+subtest 'passing test prints green' => sub {
+  my $capture = IO::Capture::Stdout->new;
+  $capture->start;
+  describe 'test describe' => sub {
+    it 'passes' => sub {
+      ok(1);
+    };
+  };
+  $capture->stop;
+
+  my $line = $capture->read;
+
+  is(substr($line, 1, 4), '[32m');
 };
