@@ -8,7 +8,7 @@ use base 'Test::More';
 use Test::More;
 use Term::ANSIColor;
 
-use version; our $VERSION = qv('0.4.1');
+use version; our $VERSION = qv('0.4.2');
 
 our @EXPORT = ( @Test::More::EXPORT, qw(describe context it) );
 
@@ -32,6 +32,7 @@ sub describe {
 sub context {
   $context_description = shift;
   my $block            = shift;
+
   $block->();
   $context_description = undef;
 
@@ -57,10 +58,10 @@ sub _evaluate_and_print_subtest {
 }
 
 sub _subtest {
-    my ($description, $block) = @_;
+  my ($description, $block) = @_;
 
-    $block->();
-    return $description->(),"\n";
+  $block->();
+  return $description->(),"\n";
 }
 
 sub _subtest_block {
