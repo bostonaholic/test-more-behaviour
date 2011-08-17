@@ -173,3 +173,21 @@ subtest 'passing test prints green' => sub {
 
   is(substr($line, 1, 4), '[32m');
 };
+
+TODO: {
+  local $TODO = 'this is a passing test but fails because the test needs the inner test to fail.';
+# subtest 'failing test prints red' => sub {
+#   my $capture = IO::Capture::Stdout->new;
+#   $capture->start;
+#   describe 'test describe' => sub {
+#     it 'fails' => sub {
+#       fail;
+#     };
+#   };
+#   $capture->stop;
+#
+#   my $line = $capture->read;
+#
+#   is(substr($line, 1, 4), '[31m');
+# };
+};
