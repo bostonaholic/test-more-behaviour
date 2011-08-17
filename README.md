@@ -42,7 +42,7 @@ This project is built with the philosophy that 'Tests are the Documentation'.  F
 
 #### describe ####
 
-Use to group a set of examples of a particular behaviour of the system that you wish you describe.
+Used to group a set of examples of a particular behaviour of the system that you wish you describe.
 
 #### it ####
 
@@ -50,7 +50,7 @@ An example to run.
 
 #### context ####
 
-Use this to further establish deeper relations for a set of examples.  This is best used when several examples have similar interactions with the system but have differring expectations.
+Used to further establish deeper relations for a set of examples.  This is best used when several examples have similar interactions with the system but have differring expectations.
 
 #### before_all ####
 
@@ -60,7 +60,7 @@ Use this to further establish deeper relations for a set of examples.  This is b
 
 #### after_all ####
 
-You can use these to define code which executes before and after each example or only once per example group.
+Used to define code which executes before and after each example or only once per example group.
 
 ### SOURCE ###
 
