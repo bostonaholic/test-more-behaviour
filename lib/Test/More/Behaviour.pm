@@ -84,7 +84,11 @@ sub _construct_description {
   $result = "$spec_description\n  $result" if $spec_description and (! $context_description);
   $result = "$spec_description\n  $context_description\n    $result" if $spec_description and $context_description;
 
-  return sub { colored [$passed ? 'green' : 'red'], $result };
+  return sub { colored [_color()], $result };
 }
+
+sub _color {
+  return $passed ? 'green' : 'red';
+};
 
 1;
