@@ -130,6 +130,8 @@ Because Test::More::Behaviour uses Test::More as its 'base', you can treat every
 
 This project is built with the philosophy that 'Tests are the Documentation'.  For a full set of features, please read through the test scenarios.
 
+=over
+
 =item B<describe>
 
 Use to group a set of examples of a particular behaviour of the system that you wish you describe.
@@ -151,6 +153,8 @@ Use this to further establish deeper relations for a set of examples.  This is b
 =item B<after_all>
 
 You can use these to define code which executes before and after each example or only once per example group.
+
+=back
 
 =head1 SOURCE
 
