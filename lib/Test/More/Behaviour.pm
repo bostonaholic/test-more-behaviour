@@ -8,7 +8,7 @@ use base 'Test::More';
 use Test::More;
 use Term::ANSIColor qw(colored);
 
-use version; our $VERSION = qv('0.4.2');
+use version; our $VERSION = qv('0.4.3');
 
 our @EXPORT = ( @Test::More::EXPORT, qw(describe context it) );
 
