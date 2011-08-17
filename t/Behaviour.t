@@ -14,13 +14,13 @@ subtest 'describe takes a description and executes a block' => sub {
   is($var, 1);
 };
 
-subtest 'it takes a description and executes a block and requires at least on expectation' => sub {
+subtest 'it takes a description and executes a block and requires at least one expectation' => sub {
   my $var = 0;
   it('test', sub { ok(1); $var = 1; });
   is($var, 1);
 };
 
-subtest "describe can take multiple it's" => sub {
+subtest 'describe can take multiple its' => sub {
   my $var1 = 0;
   my $var2 = 0;
   describe 'test' => sub {
