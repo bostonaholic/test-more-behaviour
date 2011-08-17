@@ -5,4 +5,3 @@ MANIFEST.SKIP
 README
 t/Behaviour.t
 lib/Test/More/Behaviour.pm
-t/Behaviour.t
