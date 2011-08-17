@@ -31,7 +31,8 @@ describe 'Bank Account' => sub {
 
 ### DESCRIPTION ###
 
-Test::More::Behaviour is a Behaviour-Driven Development module for Perl programmers.  It is modeled after Rspec [http://rspec.info](http://rspec.info) the infamous BDD tool for Ruby programmers.
+Test::More::Behaviour is a Behaviour-Driven Development module for Perl
+programmers.  It is modeled after Rspec [(http://rspec.info)](http://rspec.info) the infamous BDD tool for Ruby programmers.
 
 Because Test::More::Behaviour uses Test::More as its 'base', you can treat every Test::More::Behaviour test as if it were Test::More!
 
