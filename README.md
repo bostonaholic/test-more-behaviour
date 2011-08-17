@@ -32,7 +32,7 @@ describe 'Bank Account' => sub {
 ### DESCRIPTION ###
 
 Test::More::Behaviour is a Behaviour-Driven Development module for Perl
-programmers.  It is modeled after Rspec [(http://rspec.info)](http://rspec.info) the infamous BDD tool for Ruby programmers.
+programmers.  It is modeled after Rspec [http://rspec.info](http://rspec.info) the infamous BDD tool for Ruby programmers.
 
 Because Test::More::Behaviour uses Test::More as its 'base', you can treat every Test::More::Behaviour test as if it were Test::More!
 
@@ -40,25 +40,25 @@ Because Test::More::Behaviour uses Test::More as its 'base', you can treat every
 
 This project is built with the philosophy that 'Tests are the Documentation'.  For a full set of features, please read through the test scenarios.
 
-###### describe ######
+##### describe #####
 
 Use to group a set of examples of a particular behaviour of the system that you wish you describe.
 
-###### it ######
+##### it #####
 
 An example to run.
 
-###### context ######
+##### context #####
 
 Use this to further establish deeper relations for a set of examples.  This is best used when several examples have similar interactions with the system but have differring expectations.
 
-###### before_all ######
+##### before_all #####
 
-###### before_each ######
+##### before_each #####
 
-###### after_each ######
+##### after_each #####
 
-###### after_all ######
+##### after_all #####
 
 You can use these to define code which executes before and after each example or only once per example group.
 
@@ -84,7 +84,7 @@ If you do find any bugs, please send me an email or send me a github pull reques
 
 ### AUTHOR ###
 
-Matthew Boston <matthew DOT boston AT gmail DOT com> with special thanks to Dustin Williams.
+Matthew Boston &lt;matthew DOT boston AT gmail DOT com&gt; with special thanks to Dustin Williams.
 
 ### COPYRIGHT ###
 
