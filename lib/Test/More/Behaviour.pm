@@ -162,9 +162,11 @@ You can use these to define code which executes before and after each example or
 
 The source code for Test::More::Behaviour can be found at F<https://github.com/bostonaholic/test-more-behaviour>
 
-=head1 KNOWN BUGS
+=head1 BUGS AND LIMITATIONS
 
-None, yet.  But please, send me an email or send me a github pull request with a broken test (and your fix if you're able to) and I will be more than happy to fix.
+Currently, each `it` will not run as a Test::More::subtest.  This is because the coloring was not working correctly because subtest needed the description before evaluating the block passed in.  If you can fix this, please submit a github pull request and I will take a look.
+
+If you do find any bugs, please send me an email or send me a github pull request with a broken test (and your fix if you're able to) and I will be more than happy to fix.
 
 =head1 DEPENDENCIES
 
