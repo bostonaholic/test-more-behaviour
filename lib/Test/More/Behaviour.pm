@@ -91,6 +91,8 @@ sub _color {
   return $passed ? 'green' : 'red';
 };
 
+1;
+
 __END__
 
 =head1 NAME
@@ -178,8 +180,15 @@ L<IO::Capture::Stdout> (test only)
 
 Matthew Boston <matthew DOT boston AT gmail DOT com> with special thanks to Dustin Williams.
 
-* I assume no responsibility if this documentation is incorrect or outdated.  The tests are fully documenting of this software.
+=head1 COPYRIGHT
+
+Copyright (c) 2011 Matthew Boston.  All rights reserved.
+
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=head1 DISCLAIMER
+
+I assume no responsibility if this documentation is incorrect or outdated.  The tests are fully documenting of this software.
 
 =cut
-
-1;
