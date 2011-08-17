@@ -122,7 +122,7 @@ Test::More::Behaviour - BDD module for Perl
 
 =head1 DESCRIPTION
 
-Test::More::Behaviour is a Behaviour-Driven Development module for Perl programmers.  It is modeled after Rspec (http://rspec.info) the infamous BDD tool for Ruby programmers.
+Test::More::Behaviour is a Behaviour-Driven Development module for Perl programmers.  It is modeled after Rspec (F<http://rspec.info>) the infamous BDD tool for Ruby programmers.
 
 Since Test::More::Behaviour uses Test::More as its 'base', you can treat every Test::More::Behaviour test as if it were Test::More!
 
@@ -151,7 +151,7 @@ You can use these to define code which executes before and after each example or
 
 =head1 SOURCE
 
-The source code for Test::More::Behaviour can be found at https://github.com/bostonaholic/test-more-behaviour
+The source code for Test::More::Behaviour can be found at F<https://github.com/bostonaholic/test-more-behaviour>
 
 =head1 KNOWN BUGS
 
