@@ -8,7 +8,7 @@ WriteMakefile(
   PREREQ_PM         => {
     'IO::Capture::Stdout' => 0,
     'Term::ANSIColor'     => 0,
-    'Test::More'          => 0,
+    'Test::More'          => 0.87,
     'version'             => 0.77
   },
   dist              => { COMPRESS => 'gzip -9f', SUFFIX => 'gz' },
