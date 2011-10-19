@@ -1,8 +1,12 @@
-== Version 0.4.4 /
+== Version 0.4.4 / 2011-10-18
 
 * Enhancements
   * Improved documentation
   * Extracted private subroutines into Helper
+  * Perl required version 5.8
+
+* Bug Fixes
+  * Test::More required version 0.87
 
 == Version 0.4.3 / 2011-08-17
 
