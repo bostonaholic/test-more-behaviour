@@ -4,11 +4,11 @@ use 5.008000;
 use strict;
 use warnings;
 
-use Exporter qw(import);
+use Exporter ('import');
 use Test::More;
-use Term::ANSIColor qw(colored);
+use Term::ANSIColor ('colored');
 
-our @EXPORT = qw(evaluate_and_print_subtest spec_description context_description);
+our @EXPORT = ('evaluate_and_print_subtest', 'spec_description', 'context_description');
 
 my $spec_description;
 my $context_description;
