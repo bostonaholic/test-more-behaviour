@@ -1,3 +1,8 @@
+== Version 0.4.5 / 2011-10-23
+
+* Bug Fixes
+  * Fixed bug for perl 5.8 not having qw
+
 == Version 0.4.4 / 2011-10-18
 
 * Enhancements
