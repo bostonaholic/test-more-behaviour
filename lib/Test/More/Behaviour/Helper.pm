@@ -1,14 +1,14 @@
 package Test::More::Behaviour::Helper;
 
-use 5.008000;
+use 5.010000;
 use strict;
 use warnings;
 
-use Exporter ('import');
+use Exporter qw(import);
 use Test::More;
-use Term::ANSIColor ('colored');
+use Term::ANSIColor qw(colored);
 
-our @EXPORT = ('evaluate_and_print_subtest', 'spec_description', 'context_description');
+our @EXPORT = qw(evaluate_and_print_subtest spec_description context_description);
 
 my $spec_description;
 my $context_description;

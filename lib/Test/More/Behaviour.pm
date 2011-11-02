@@ -1,16 +1,16 @@
 package Test::More::Behaviour;
 
-use 5.008000;
+use 5.010000;
 use strict;
 use warnings;
 
 use base 'Test::More';
 use Test::More;
-use Test::More::Behaviour::Helper ('evaluate_and_print_subtest', 'spec_description', 'context_description');
+use Test::More::Behaviour::Helper qw(evaluate_and_print_subtest spec_description context_description);
 
-use version; our $VERSION = '0.4.5';
+use version; our $VERSION = qv('0.4.5');
 
-our @EXPORT = ( @Test::More::EXPORT, ('describe', 'context', 'it') );
+our @EXPORT = ( @Test::More::EXPORT, qw(describe context it) );
 
 sub describe {
   spec_description(shift);
