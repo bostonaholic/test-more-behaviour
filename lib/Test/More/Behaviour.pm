@@ -1,6 +1,5 @@
 package Test::More::Behaviour;
 
-use 5.008000;
 use strict;
 use warnings;
 
