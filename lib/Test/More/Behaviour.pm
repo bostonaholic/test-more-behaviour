@@ -7,7 +7,7 @@ use base 'Test::More';
 use Test::More;
 use Test::More::Behaviour::Helper qw(evaluate_and_print_subtest spec_description context_description);
 
-use version; our $VERSION = qv('0.4.6');
+use version; our $VERSION = qv('0.4.7');
 
 our @EXPORT = ( @Test::More::EXPORT, qw(describe context it) );
 
