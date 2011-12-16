@@ -1,17 +1,14 @@
-== Version 0.4.5 / 2011-10-23
+== Version 0.4.7 / 2011-12-15
 
 * Bug Fixes
   * Fixed bug for perl 5.8 not having qw
-
-== Version 0.4.4 / 2011-10-18
+  * Test::More required version 0.87
 
 * Enhancements
   * Improved documentation
   * Extracted private subroutines into Helper
-  * Perl required version 5.8
-
-* Bug Fixes
-  * Test::More required version 0.87
+  * Remove Perl required version
+  * Test::More as a build prereq rather than run prereq
 
 == Version 0.4.3 / 2011-08-17
 
