@@ -7,4 +7,3 @@ t/Behaviour.t
 t/Helper.t
 lib/Test/More/Behaviour.pm
 lib/Test/More/Behaviour/Helper.pm
-
