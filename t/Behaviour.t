@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 'no_plan';
+use Test::More;
 use IO::Capture::Stdout;
 
 BEGIN {
@@ -12,12 +12,16 @@ subtest 'describe takes a description and executes a block' => sub {
   my $var = 0;
   describe('test', sub { $var = 1 });
   is($var, 1);
+
+  done_testing();
 };
 
 subtest 'it takes a description and executes a block and requires at least one expectation' => sub {
   my $var = 0;
   it('test', sub { ok(1); $var = 1; });
   is($var, 1);
+
+  done_testing();
 };
 
 subtest 'describe can take multiple its' => sub {
@@ -36,12 +40,16 @@ subtest 'describe can take multiple its' => sub {
 
   is($var1, 1);
   is($var2, 2);
+
+  done_testing();
 };
 
 subtest 'context takes a description and executes a block' => sub {
   my $var = 0;
   context 'test' => sub { $var = 1 };
   is($var, 1);
+
+  done_testing();
 };
 
 subtest 'context can take multiple its' => sub {
@@ -63,6 +71,8 @@ subtest 'context can take multiple its' => sub {
   is($var1, 1);
   is($var2, 2);
   is($var3, 3);
+
+  done_testing();
 };
 
 subtest 'describe can take multiple contexts' => sub {
@@ -91,6 +101,8 @@ subtest 'describe can take multiple contexts' => sub {
   is($var2, 2);
   is($var3, 3);
   is($var4, 4);
+
+  done_testing();
 };
 
 my $before_all_var = 0;
@@ -107,6 +119,8 @@ subtest 'before_all executes for each describe' => sub {
   };
 
   is($before_all_var, 2);
+
+  done_testing();
 };
 
 my $before_each_var = 0;
@@ -124,6 +138,8 @@ subtest 'before_each executes for each it' => sub {
   };
 
   is($before_each_var, 3);
+
+  done_testing();
 };
 
 my $after_all_var = 0;
@@ -140,6 +156,8 @@ subtest 'after_all executes for each describe' => sub {
   };
 
   is($after_all_var, 2);
+
+  done_testing();
 };
 
 my $after_each_var = 0;
@@ -157,6 +175,8 @@ subtest 'after_each executes for each it' => sub {
   };
 
   is($after_each_var, 3);
+
+  done_testing();
 };
 
 subtest 'passing test prints green' => sub {
@@ -172,6 +192,8 @@ subtest 'passing test prints green' => sub {
   my $line = $capture->read;
 
   is(substr($line, 1, 4), '[32m');
+
+  done_testing();
 };
 
 TODO: {
@@ -189,5 +211,9 @@ TODO: {
 #   my $line = $capture->read;
 #
 #   is(substr($line, 1, 4), '[31m');
+#
+#   done_testing();
 # };
 };
+
+done_testing();
