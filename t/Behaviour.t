@@ -10,7 +10,7 @@ BEGIN {
 
 subtest 'describe takes a description and executes a block' => sub {
   my $var = 0;
-  describe('test', sub { $var = 1 });
+  describe 'test' => sub { $var = 1 };
   is($var, 1);
 
   done_testing();
@@ -18,7 +18,7 @@ subtest 'describe takes a description and executes a block' => sub {
 
 subtest 'it takes a description and executes a block and requires at least one expectation' => sub {
   my $var = 0;
-  it('test', sub { ok(1); $var = 1; });
+  it 'test' => sub { ok(1); $var = 1; };
   is($var, 1);
 
   done_testing();
