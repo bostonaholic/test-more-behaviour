@@ -1,9 +1,10 @@
 Changes
+examples/BankAccountSpec.t
+lib/Test/More/Behaviour.pm
+lib/Test/More/Behaviour/Helper.pm
 Makefile.PL
 MANIFEST
 MANIFEST.SKIP
 README
 t/Behaviour.t
 t/Helper.t
-lib/Test/More/Behaviour.pm
-lib/Test/More/Behaviour/Helper.pm
