@@ -15,7 +15,7 @@ $ cpan -i Test::More::Behaviour
 ``` perl
 describe 'Bank Account' => sub {
   context 'transferring money' => sub {
-    it 'withdrawals amount from the source account' => sub {
+    it 'withdraws amount from the source account' => sub {
       my $source = BankAccount->new(100);
       my $target = BankAccount->new(0);
       $source->transfer(50, $target);
@@ -83,6 +83,12 @@ If you do find any bugs, please send me an email or send me a github pull reques
 [version](http://search.cpan.org/~jpeacock/version-0.93/lib/version.pod)
 
 [IO::Capture::Stdout](http://search.cpan.org/~reynolds/IO-Capture-0.05/lib/IO/Capture/Stdout.pm) (test only)
+
+### CONTRIBUTING
+
+Please report bugs via [Github issues](https://github.com/bostonaholic/test-more-behaviour/issues) and provide as many details as possible regarding your version of Perl, Test::More::Behaviour and anything else that may help with reproducing.
+
+For enhancements and feature requests, please use Github issues and/or by submitting a pull request.
 
 ### AUTHOR ###
 

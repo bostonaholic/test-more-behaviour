@@ -60,7 +60,7 @@ Test::More::Behaviour - BDD module for Perl
 
   describe 'Bank Account' => sub {
     context 'transferring money' => sub {
-      it 'withdrawals amount from the source account' => sub {
+      it 'withdraws amount from the source account' => sub {
         my $source = BankAccount->new(100);
         my $target = BankAccount->new(0);
         $source->transfer(50, $target);
@@ -130,6 +130,12 @@ L<Term::ANSIColor>
 L<version>
 
 L<IO::Capture::Stdout> (test only)
+
+=head1 CONTRIBUTING
+
+Please report bugs via Github issues F<https://github.com/bostonaholic/test-more-behaviour/issues> and provide as many details as possible regarding your version of Perl, Test::More::Behaviour and anything else that may help with reproducing.
+
+For enhancements and feature requests, please use Github issues and/or by submitting a pull request.
 
 =head1 AUTHOR
 
