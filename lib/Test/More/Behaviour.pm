@@ -60,16 +60,14 @@ Test::More::Behaviour - BDD module for Perl
 
   describe 'Bank Account' => sub {
     context 'transferring money' => sub {
+      my $source = BankAccount->new(100);
+      my $target = BankAccount->new(0);
+      $source->transfer(50, $target);
+
       it 'withdraws amount from the source account' => sub {
-        my $source = BankAccount->new(100);
-        my $target = BankAccount->new(0);
-        $source->transfer(50, $target);
         is($source->balance, 50);
       };
       it 'deposits amount into target account' => sub {
-        my $source = BankAccount->new(100);
-        my $target = BankAccount->new(0);
-        $source->transfer(50, $target);
         is($target->balance, 50);
       };
     };
