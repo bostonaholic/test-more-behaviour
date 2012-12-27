@@ -1,9 +1,9 @@
-== Version 0.4.8 / 2012-11-30
+=== Version 0.4.8 / 2012-11-30
 
 * Bug Fixes
   * Fixed bug that caused tests to fail while installing the module
 
-== Version 0.4.7 / 2011-12-15
+=== Version 0.4.7 / 2011-12-15
 
 * Bug Fixes
   * Fixed bug for perl 5.8 not having qw
@@ -15,13 +15,13 @@
   * Remove Perl required version
   * Test::More as a build prereq rather than run prereq
 
-== Version 0.4.3 / 2011-08-17
+=== Version 0.4.3 / 2011-08-17
 
 * Enhancements
   * Improved documentation
   * Added ABSTRACT_FROM in Makefile.PL
 
-== Version 0.4.2 / 2011-08-16
+=== Version 0.4.2 / 2011-08-16
 
 * Enhancements
   * Added tests to distribution tar.gz
