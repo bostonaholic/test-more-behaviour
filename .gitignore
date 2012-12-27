@@ -1,6 +1,7 @@
 *.bak
+*~
+*.old
+*.tar.gz
 Makefile
-Makefile.old
-blib
+blib/
 pm_to_blib
-Test-More-Behaviour*tar.gz
