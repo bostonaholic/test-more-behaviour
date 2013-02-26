@@ -4,6 +4,7 @@ examples/BankAccount.pm
 examples/BankAccountSpec.t
 lib/Test/More/Behaviour.pm
 lib/Test/More/Behaviour/Helper.pm
+License.txt
 Makefile.PL
 MANIFEST
 MANIFEST.SKIP
