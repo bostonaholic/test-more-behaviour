@@ -6,61 +6,149 @@ Test::More::Behaviour - BDD module for Perl
 
 ### INSTALL ###
 
-```
-$ cpan -i Test::More::Behaviour
-```
-
-### SYNOPSIS ###
-
-``` perl
-describe 'Bank Account' => sub {
-  context 'transferring money' => sub {
-    my $source = BankAccount->new(100);
-    my $target = BankAccount->new(0);
-    $source->transfer(50, $target);
-
-    it 'withdraws amount from the source account' => sub {
-      is($source->balance, 50);
-    };
-    it 'deposits amount into target account' => sub {
-      is($target->balance, 50);
-    };
-  };
-};
-```
+    $ cpan -i Test::More::Behaviour
 
 ### DESCRIPTION ###
 
 Test::More::Behaviour is a Behaviour-Driven Development module for Perl
-programmers.  It is modeled after Rspec [http://rspec.info](http://rspec.info) the infamous BDD tool for Ruby programmers.
+programmers.  It is modeled after [Rspec](http://rspec.info), the BDD tool for Ruby programmers.
 
 Because Test::More::Behaviour uses Test::More as its 'base', you can treat every Test::More::Behaviour test as if it were Test::More!
 
+### SYNOPSIS ###
+
+#### basic structure ####
+
+Test::More::Behaviour uses the words `describe` and `it` so we can
+express concepts of the application as we would in conversation:
+
+    "Describe a bank account."
+    "It transfers money between two accounts."
+
+code:
+
+    describe 'Bank Account' => sub {
+        it 'transfers money between two accounts' => sub {
+            my $source = BankAccount->new(100);
+            my $target = BankAccount->new(0);
+            $source->transfer(50, $target);
+
+            is($source->balance, 50);
+            is($source->balance, 50);
+        };
+    };
+
+Then the output should be:
+
+    Bank Account
+       transfers money between two accounts
+
+The `describe` subroutine takes a description and a block. Inside the
+block you can declare examples using the `it` subroutine.
+
+#### nested groups ####
+
+You can also declare nested groups using the  `describe` or `context`
+subroutines.
+
+    describe 'Bank Account' => sub {
+        context 'when opening without an initial amount' => sub {
+            it 'has an initial balance of 0' => sub {
+                ...
+            };
+        };
+        
+        context 'when opening with an initial amount of 100' => sub {
+            it 'has an initial balance of 100' => sub {
+                ...
+            };
+        };
+    };
+
 ### QUICK REFERENCE ###
 
-This project is built with the philosophy that 'Tests are the Documentation'.  For a full set of features, please read through the test scenarios.
+This project is built with the philosophy that 'Tests are the
+Documentation'.  For a full set of features, please read through the
+test scenarios.
+
+Some examples are listed with the [source code](https://github.com/bostonaholic/test-more-behaviour) under `examples/`.
 
 #### describe ####
 
-Used to group a set of examples of a particular behaviour of the system that you wish you describe.
+Used to group a set of examples of a particular behaviour of the
+system that you wish you describe.
+
+    describe 'Bank Account' sub => {
+        ...
+    };
 
 #### it ####
 
 An example to run.
 
+    describe 'Bank Account' => sub {
+        it 'transfers money between two accounts' => sub {
+            ...
+        };
+    };
+
 #### context ####
 
 Used to further establish deeper relations for a set of examples.  This is best used when several examples have similar interactions with the system but have differring expectations.
 
+    describe 'Bank Account' => sub {
+        context 'when opening without an initial amount' => sub {
+            it 'has an initial balance of 0' => sub {
+                ...
+            };
+        };
+        
+        context 'when opening with an initial amount of 100' => sub {
+            it 'has an initial balance of 100' => sub {
+                ...
+            };
+        };
+    };
+
 #### before_all ####
+
+#### after_all ####
+
+These subroutines will run before and after all the `it` examples.
+
+    sub before_all {
+        ...
+    };
+    
+    sub after_all {
+        ...
+    };
+
+    describe 'Bank Account' => sub {
+        it 'transfers money between two accounts' => sub {
+            ...
+        };
+    };
 
 #### before_each ####
 
 #### after_each ####
 
-#### after_all ####
+Used to define code which executes before and after each `it` example.
 
-Used to define code which executes before and after each example or only once per example group.
+    sub before_each {
+        ...
+    };
+    
+    sub after_each {
+        ...
+    };
+
+    describe 'Bank Account' => sub {
+        it 'transfers money between two accounts' => sub {
+            ...
+        };
+    };
 
 ### SOURCE ###
 
@@ -70,7 +158,9 @@ The source code for Test::More::Behaviour can be found at [https://github.com/bo
 
 Currently, each `it` will not run as a Test::More::subtest.  This is because the coloring was not working correctly because subtest needed the description before evaluating the block passed in.  If you can fix this, please submit a github pull request and I will take a look.
 
-If you do find any bugs, please send me an email or send me a github pull request with a broken test (and your fix if you're able to) and I will be more than happy to fix.
+If you do find any bugs, please send me an email or create a
+[Github Issue](https://github.com/bostonaholic/test-more-behaviour/issues)
+or pull request with a failing test (and your fix if you're able to) and I will be more than happy to fix.
 
 ### DEPENDENCIES ###
 
