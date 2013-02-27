@@ -82,7 +82,7 @@ code:
           $source->transfer(50, $target);
 
           is($source->balance, 50);
-          is($source->balance, 50);
+          is($target->balance, 50);
       };
   };
 
