@@ -1,3 +1,9 @@
+=== Version 1.0.1 / 2013-07-26
+
+* Enhancements
+  * Add the license agreement to the manifest
+  * fix misdocumentation in the POD format
+
 === Version 1.0.0 / 2013-02-26
 
 * Enhancements
