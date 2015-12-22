@@ -228,7 +228,7 @@ For enhancements and feature requests, please use Github issues and/or by submit
 
 =head1 AUTHOR
 
-Matthew Boston <matthew DOT boston AT gmail DOT com> with special thanks to Dustin Williams.
+Matthew Boston <matthew AT matthewboston DOT com> with special thanks to Dustin Williams.
 
 =head1 COPYRIGHT
 

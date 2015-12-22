@@ -2,7 +2,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
   NAME              => 'Test::More::Behaviour',
-  AUTHOR            => 'Matthew Boston <matthew.boston@gmail.com>',
+  AUTHOR            => 'Matthew Boston <matthew@matthewboston.com>',
   VERSION_FROM      => 'lib/Test/More/Behaviour.pm',
   ABSTRACT_FROM     => 'lib/Test/More/Behaviour.pm',
   PREREQ_PM         => {

@@ -180,7 +180,7 @@ For enhancements and feature requests, please use Github issues and/or by submit
 
 ### AUTHOR ###
 
-Matthew Boston &lt;matthew DOT boston AT gmail DOT com&gt; with special thanks to Dustin Williams.
+Matthew Boston &lt;matthew AT matthewboston DOT com&gt; with special thanks to Dustin Williams.
 
 ### COPYRIGHT ###
 
