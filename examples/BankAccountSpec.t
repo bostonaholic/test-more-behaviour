@@ -22,17 +22,18 @@ describe 'Bank Account' => sub {
             is($account->balance, 50.00);
         };
     };
-    context 'when transferring money between two accounts' => sub {
-        my $source = BankAccount->new(100);
-
-        my $target = BankAccount->new(0);
-        $source->transfer(50, $target);
+    context 'when transferring money between two accounts' => sub { 
+        my $initial_balance = 100.0;
+        my $source = BankAccount->new($initial_balance);
+        my $amount_to_transfer = 50.0;
+        my $target = BankAccount->new(); # We already know it should be 0
+        $source->transfer($amount_to_transfer, $target);
 
         it 'withdraws amount from the source account' => sub {
-            is($source->balance, 50);
+            is($source->balance, $initial_balance - $amount_to_transfer);
         };
         it 'deposits amount into target account' => sub {
-            is($target->balance, 50);
+            is($target->balance, $amount_to_transfer);
         };
     };
 };
