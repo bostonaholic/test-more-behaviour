@@ -119,6 +119,10 @@ This project is built with the philosophy that 'Tests are the Documentation'.  F
 
 Some examples are listed with the source code (F<https://github.com/bostonaholic/test-more-behaviour>) under `examples/`.
 
+(F<https://github.com/bostonaholic/bankaccount-perl>)
+
+(F<https://github.com/bostonaholic/bowling-perl>)
+
 =over
 
 =item B<describe>
