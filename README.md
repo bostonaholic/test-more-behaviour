@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bostonaholic/test-more-behaviour.svg?branch=master)](https://travis-ci.org/bostonaholic/test-more-behaviour) [![endorse](http://api.coderwall.com/bostonaholic/endorsecount.png)](http://coderwall.com/bostonaholic)
+[![Build Status](https://travis-ci.org/bostonaholic/test-more-behaviour.svg?branch=master)](https://travis-ci.org/bostonaholic/test-more-behaviour)
 
 ### NAME ###
 
