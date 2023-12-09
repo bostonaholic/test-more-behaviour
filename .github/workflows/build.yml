@@ -7,13 +7,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        perl: [
+        '5.8',
+        '5.10',
+        '5.12',
+        '5.14',
+        '5.16',
+        '5.18',
+        '5.20'
+        ]
+
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Perl
+      - name: Set up Perl ${{ matrix.perl }}
         uses: shogo82148/actions-setup-perl@v1
         with:
-          perl-version: '5.16'
+          perl-version: ${{ matrix.perl }}
+
+      - run: perl -V
 
       - name: Install dependencies
         run: cpanm --installdeps .
