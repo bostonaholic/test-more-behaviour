@@ -26,6 +26,6 @@
 # Mac OSX SMB mount metadata files
 \B\._
 
-# Don't distribute the README.md made for Github
+# Don't distribute the README.md made for GitHub
 README.md
 MAKE.md

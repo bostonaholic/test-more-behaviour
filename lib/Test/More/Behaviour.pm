@@ -226,9 +226,9 @@ L<IO::Capture::Stdout> (test only)
 
 =head1 CONTRIBUTING
 
-Please report bugs via Github issues F<https://github.com/bostonaholic/test-more-behaviour/issues> and provide as many details as possible regarding your version of Perl, Test::More::Behaviour and anything else that may help with reproducing.
+Please report bugs via GitHub issues F<https://github.com/bostonaholic/test-more-behaviour/issues> and provide as many details as possible regarding your version of Perl, Test::More::Behaviour and anything else that may help with reproducing.
 
-For enhancements and feature requests, please use Github issues and/or by submitting a pull request.
+For enhancements and feature requests, please use GitHub issues and/or by submitting a pull request.
 
 =head1 AUTHOR
 

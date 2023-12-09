@@ -161,7 +161,7 @@ The source code for Test::More::Behaviour can be found at [https://github.com/bo
 Currently, each `it` will not run as a Test::More::subtest.  This is because the coloring was not working correctly because subtest needed the description before evaluating the block passed in.  If you can fix this, please submit a github pull request and I will take a look.
 
 If you do find any bugs, please send me an email or create a
-[Github Issue](https://github.com/bostonaholic/test-more-behaviour/issues)
+[GitHub Issue](https://github.com/bostonaholic/test-more-behaviour/issues)
 or pull request with a failing test (and your fix if you're able to) and I will be more than happy to fix.
 
 ### DEPENDENCIES ###
@@ -176,9 +176,9 @@ or pull request with a failing test (and your fix if you're able to) and I will 
 
 ### CONTRIBUTING
 
-Please report bugs via [Github issues](https://github.com/bostonaholic/test-more-behaviour/issues) and provide as many details as possible regarding your version of Perl, Test::More::Behaviour and anything else that may help with reproducing.
+Please report bugs via [GitHub issues](https://github.com/bostonaholic/test-more-behaviour/issues) and provide as many details as possible regarding your version of Perl, Test::More::Behaviour and anything else that may help with reproducing.
 
-For enhancements and feature requests, please use Github issues and/or by submitting a pull request.
+For enhancements and feature requests, please use GitHub issues and/or by submitting a pull request.
 
 ### AUTHOR ###
 
